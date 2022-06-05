@@ -1,0 +1,113 @@
+$primary:#000000;
+$secondary:#ff00c3;
+$tree:#ff0000;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: $primary;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+header {
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    text-decoration-color: #fff;
+    color: #fff;
+    display: block;
+    position: relative;
+}
+
+aside {
+    margin-top: 5px;
+    display: inline-block;
+    align-items: center;
+    order: 2;
+}
+
+.img_card {
+    width: 100%;
+    height: 200px;
+}
+
+.card {
+    text-align: center;
+    margin: 5px;
+    order: 1;
+}
+
+.flex_grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.center {
+    text-align: center;
+}
+
+
+@media screen and (min-width: 768px) {
+    .flex_grid {
+        display: grid;
+        grid-template-columns: 25% 1fr;
+    }
+
+    aside {
+        grid-template-columns: 1fr 25%;
+        display: inline-block;
+        align-items: center;
+        order: 1;
+    }
+
+    section {
+        grid-template-columns: 1fr 75%;
+        display: inline-block;
+        order: 2;
+    }
+
+    .card {
+        text-align: center;
+        margin: 5px;
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    aside {
+        display: inline-block;
+        align-items: center;
+
+    }
+
+    .card {
+        text-align: center;
+        margin: 5px;
+        order: 2;
+    }
+}
+
+@for $i from 1 to 13 {
+    .grid-#{$i} {
+        display: grid;
+        grid-template-columns: repeat($i, 1fr);
+    }
+
+    .col-#{$i} {
+        $calcul: 100/12 *$i;
+    }
+
+    .wrap div {
+        height: 100px;
+        border: 2px solid black;
+    }
+}
